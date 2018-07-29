@@ -93,6 +93,8 @@ class MainActivity : AppCompatActivity() {
                     File(photoUri.path).deleteOnExit()
                 }
             }
+        }else{
+            chooseFromAlbum()
         }
     }
 }
