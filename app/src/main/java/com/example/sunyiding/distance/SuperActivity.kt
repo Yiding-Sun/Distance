@@ -34,14 +34,16 @@ abstract class SuperActivity(val contentView: Int, val layout: Int) : AppCompatA
     
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (resultCode == Activity.RESULT_OK) {
+            println("OK")
             when (requestCode) {
-                GET_PHOTO -> cropPhoto(data!!.data)
+                GET_PHOTO -> cropPhoto(data?.data ?: photoUri)
                 CROP_PHOTO -> {
                     imageView.setImageBitmap(BitmapFactory.decodeFile(photoUri.path))
                     File(photoUri.path).deleteOnExit()
                 }
             }
         } else {
+            println("FAILED")
             getPhoto()
         }
     }
@@ -49,13 +51,6 @@ abstract class SuperActivity(val contentView: Int, val layout: Int) : AppCompatA
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(contentView)
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED) {
-            // 申请读写内存卡内容的权限
-            ActivityCompat.requestPermissions(this,
-                    arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 233)
-            
-        }
         imageView = MyView(this)
         val textView = FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT)
         imageView.layoutParams = textView

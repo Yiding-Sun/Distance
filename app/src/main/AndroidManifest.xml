@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ChooseActivity"/>
+        <activity android:name=".PhotoActivity"/>
     </application>
 
 </manifest>

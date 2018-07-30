@@ -5,10 +5,14 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".StartActivity">
+        tools:context=".StartActivity" android:orientation="horizontal">
 
     <Button
             android:text="@string/choose_photos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/choose_photo" android:layout_weight="1"/>
+    <Button
+            android:text="@string/take_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/take_photo" android:layout_weight="1"/>
 </LinearLayout>
