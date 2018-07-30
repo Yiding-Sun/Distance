@@ -11,7 +11,7 @@ class StartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
         findViewById<Button>(R.id.choose_photo).setOnClickListener {
-            val intent=Intent(this@StartActivity,Class.forName("com.example.sunyiding.distance.MainActivity"))
+            val intent = Intent(this@StartActivity, ChooseActivity::class.java)
             startActivity(intent)
         }
     }
