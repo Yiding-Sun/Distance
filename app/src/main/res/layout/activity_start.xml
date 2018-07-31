@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<TableLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".StartActivity" android:orientation="horizontal">
+        tools:context=".StartActivity" android:orientation="vertical">
 
-    <Button
-            android:text="@string/choose_photos"
+    <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/choose_photo" android:layout_weight="1"/>
-    <Button
-            android:text="@string/take_photo"
+            android:layout_height="match_parent">
+        <Button
+                android:text="@string/choose_photos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/choose_photo" android:layout_weight="1"/>
+        <Button
+                android:text="@string/take_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/take_photo" android:layout_weight="1"/>
+    </TableRow>
+    <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/take_photo" android:layout_weight="1"/>
-</LinearLayout>
+            android:layout_height="match_parent">
+        <Button
+                android:text="@string/calibration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/calibration"/>
+    </TableRow>
+</TableLayout>

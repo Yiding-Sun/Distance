@@ -9,5 +9,4 @@ class PhotoActivity : SuperActivity(R.layout.activity_main, R.id.layout) {
         intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri)
         startActivityForResult(intent, GET_PHOTO)
     }
-    
 }
